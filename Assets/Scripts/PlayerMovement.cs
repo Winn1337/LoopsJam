@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform handPos;
     public float handRadius;
     public LayerMask barMask;
+    public float helpRadius;
+    public float helpForce;
 
     public Vector3 armAnchor;
     public Vector3 armAxis;
@@ -39,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
             joint.motor = motor;
         }
 
+        if (Input.GetKeyDown(KeyCode.X) && armJoint)
+            Destroy(armJoint);
+    }
+
+    private void FixedUpdate()
+    {
         if (!armJoint)
         {
             Collider[] bars = Physics.OverlapSphere(handPos.position, handRadius, barMask);
@@ -61,10 +69,19 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 lastBar = null;
+
+                bars = Physics.OverlapSphere(handPos.position, helpRadius, barMask);
+
+                if (bars.Length > 0)
+                {
+                    if (bars[0].transform == lastBar)
+                        return;
+
+                    Vector3 relPos = bars[0].transform.position - handPos.position;
+
+                    upperBody.GetComponent<Rigidbody>().AddForceAtPosition(relPos * helpForce, handPos.position);
+                }
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.X) && armJoint)
-            Destroy(armJoint);
     }
 }

@@ -39,16 +39,8 @@ public class CameraSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-            Restart();
-
         if (Input.GetKeyDown(KeyCode.C))
             DoToggle();
-    }
-
-    public static void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void DoToggle()

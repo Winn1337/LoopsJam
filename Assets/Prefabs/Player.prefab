@@ -285,7 +285,7 @@ MonoBehaviour:
   - {fileID: 5528897757416857959}
   - {fileID: 8369817069581026336}
   handPos: {fileID: 96635215412696556}
-  handRadius: 0.5
+  handRadius: 0.33
   barMask:
     serializedVersion: 2
     m_Bits: 8
