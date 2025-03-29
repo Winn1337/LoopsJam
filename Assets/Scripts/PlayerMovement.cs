@@ -1,6 +1,7 @@
 using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,11 +16,15 @@ public class PlayerMovement : MonoBehaviour
     public Transform handPos;
     public float handRadius;
     public LayerMask barMask;
-    public float helpRadius;
-    public float helpForce;
+    //public float helpRadius;
+    //public float helpForce;
+    public float easyHandRadius;
+    public float hardHandRadius;
 
     public Vector3 armAnchor;
     public Vector3 armAxis;
+
+    public Slider difficultySlider;
 
     Transform lastBar;
 
@@ -27,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     {
         foreach(var joint in legJoints)
             joint.useMotor = true;
+
+        difficultySlider.value = PlayerPrefs.GetFloat("difficulty", 0.5f);
+        SetDifficulty(difficultySlider.value);
     }
 
     void Update()
@@ -76,23 +84,29 @@ public class PlayerMovement : MonoBehaviour
             {
                 lastBar = null;
 
-                bars = Physics.OverlapSphere(handPos.position, helpRadius, barMask);
+                //bars = Physics.OverlapSphere(handPos.position, helpRadius, barMask);
 
-                if (bars.Length > 0)
-                {
-                    if (bars[0].transform == lastBar)
-                        return;
+                //if (bars.Length > 0)
+                //{
+                //    if (bars[0].transform == lastBar)
+                //        return;
 
-                    Vector3 relPos = bars[0].transform.position - handPos.position;
+                //    Vector3 relPos = bars[0].transform.position - handPos.position;
 
-                    upperBody.GetComponent<Rigidbody>().AddForceAtPosition(relPos * helpForce, handPos.position);
-                }
+                //    upperBody.GetComponent<Rigidbody>().AddForceAtPosition(relPos * helpForce, handPos.position);
+                //}
             }
         }
         else
         {
             upperBody.eulerAngles = new Vector3(0, 0, upperBody.eulerAngles.z);
         }
+    }
+
+    public void SetDifficulty(float val)
+    {
+        handRadius = Mathf.Lerp(easyHandRadius, hardHandRadius, val);
+        PlayerPrefs.SetFloat("difficulty", val);
     }
 
     void SaveVector(string name, Vector3 vector)
@@ -131,10 +145,5 @@ public class PlayerMovement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             rb.linearVelocity = Vector3.zero;
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-
     }
 }
