@@ -2938,6 +2938,7 @@ CapsuleCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 143775408}
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 1233917763}
@@ -2947,4 +2948,3 @@ SceneRoots:
   - {fileID: 3697512}
   - {fileID: 1160638620}
   - {fileID: 1558206785}
-  - {fileID: 143775408}
