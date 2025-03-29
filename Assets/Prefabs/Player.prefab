@@ -289,6 +289,8 @@ MonoBehaviour:
   barMask:
     serializedVersion: 2
     m_Bits: 8
+  helpRadius: 1
+  helpForce: 50
   armAnchor: {x: 0, y: 1, z: 0}
   armAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &1894088058012651575

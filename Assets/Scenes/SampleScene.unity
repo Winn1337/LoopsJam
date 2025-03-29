@@ -1790,18 +1790,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 944890404483388363, guid: cabd5ce3473d8ba40b68b0894f7a0282, type: 3}
-      propertyPath: helpForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 944890404483388363, guid: cabd5ce3473d8ba40b68b0894f7a0282, type: 3}
-      propertyPath: handRadius
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 944890404483388363, guid: cabd5ce3473d8ba40b68b0894f7a0282, type: 3}
-      propertyPath: helpRadius
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 992310185576632063, guid: cabd5ce3473d8ba40b68b0894f7a0282, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
