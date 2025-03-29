@@ -40,10 +40,15 @@ public class CameraSwitcher : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Restart();
 
         if (Input.GetKeyDown(KeyCode.C))
             DoToggle();
+    }
+
+    public static void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void DoToggle()
