@@ -276,7 +276,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.075
-  m_Height: 0.66
+  m_Height: 0.75
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3568346338176479861
@@ -966,13 +966,13 @@ MonoBehaviour:
   - {fileID: 3757372059482879812}
   - {fileID: 917004290006815235}
   handPos: {fileID: 8775576117639300047}
-  handRadius: 0.33
+  handRadius: 0.2
   barMask:
     serializedVersion: 2
     m_Bits: 8
   helpRadius: 1
   helpForce: 50
-  armAnchor: {x: 0, y: 1, z: 0}
+  armAnchor: {x: 0, y: 1.05, z: 0}
   armAxis: {x: 0, y: 0, z: 1}
 --- !u!114 &1539476552509343703
 MonoBehaviour:
@@ -1169,7 +1169,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.075
-  m_Height: 0.66
+  m_Height: 0.75
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8696455448582558325
@@ -1334,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.026000977
       objectReference: {fileID: 0}
+    - target: {fileID: -4192993030534879267, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3432401550182100168, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.96798456
@@ -1386,6 +1390,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -11.271
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1407b793fea36ec46a1504c64e6ed079, type: 2}
+    - target: {fileID: 649908731786081697, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1407b793fea36ec46a1504c64e6ed079, type: 2}
     - target: {fileID: 919132149155446097, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
       propertyPath: m_Name
       value: Idle
@@ -1517,6 +1529,22 @@ PrefabInstance:
     - target: {fileID: 8169382868667117632, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -177.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: m_SkinnedMotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1407b793fea36ec46a1504c64e6ed079, type: 2}
+    - target: {fileID: 8417361359673230750, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1407b793fea36ec46a1504c64e6ed079, type: 2}
+    - target: {fileID: 8452750649765645424, guid: c832e88bdbfb5634896d2faf69ae2631, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
