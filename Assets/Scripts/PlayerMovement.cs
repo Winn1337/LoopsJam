@@ -43,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && armJoint)
             Destroy(armJoint);
+
+        if (Input.GetKeyDown(KeyCode.A))
+            Load();
+
+        if (Input.GetKeyDown(KeyCode.S))
+            Save();
     }
 
     private void FixedUpdate()
@@ -83,5 +89,52 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            upperBody.eulerAngles = new Vector3(0, 0, upperBody.eulerAngles.z);
+        }
+    }
+
+    void SaveVector(string name, Vector3 vector)
+    {
+        PlayerPrefs.SetFloat(name + "x", vector.x);
+        PlayerPrefs.SetFloat(name + "y", vector.y);
+        PlayerPrefs.SetFloat(name + "z", vector.z);
+    }
+
+    Vector3 LoadVector(string name)
+    {
+        return new Vector3(
+            PlayerPrefs.GetFloat(name + "x"),
+            PlayerPrefs.GetFloat(name + "y"),
+            PlayerPrefs.GetFloat(name + "z")
+            );
+    }
+
+    void Save()
+    {
+        SaveVector("bodypos", upperBody.position);
+        SaveVector("bodyrot", upperBody.eulerAngles);
+    }
+
+    private void Load()
+    {
+        if (armJoint)
+            Destroy(armJoint);
+
+        upperBody.position = LoadVector("bodypos");
+        upperBody.eulerAngles = LoadVector("bodyrot");
+
+        Rigidbody[] rbs = GetComponentsInChildren<Rigidbody>();
+        foreach (var rb in rbs)
+        {
+            rb.angularVelocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+
     }
 }
