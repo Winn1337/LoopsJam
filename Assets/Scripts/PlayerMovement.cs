@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         difficultySlider.value = PlayerPrefs.GetFloat("difficulty", 0.5f);
         SetDifficulty(difficultySlider.value);
+
+        //Remember to uncomment this and ApplicationQuit
+        Save();
     }
 
     void Update()
@@ -52,15 +55,23 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) && armJoint)
             Destroy(armJoint);
 
-        if (Input.GetKeyDown(KeyCode.A))
-            Load();
+        if (Input.GetKeyDown(KeyCode.Space) || transform.position.y < 0.5f)
+            load = true;
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
             Save();
     }
 
+    bool load;
+
     private void FixedUpdate()
     {
+        if (load)
+        {
+            Load();
+            load = false;
+        }
+
         if (!armJoint)
         {
             Collider[] bars = Physics.OverlapSphere(handPos.position, handRadius, barMask);
@@ -133,17 +144,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void Load()
     {
-        if (armJoint)
-            Destroy(armJoint);
-
-        upperBody.position = LoadVector("bodypos");
-        upperBody.eulerAngles = LoadVector("bodyrot");
-
         Rigidbody[] rbs = GetComponentsInChildren<Rigidbody>();
         foreach (var rb in rbs)
         {
             rb.angularVelocity = Vector3.zero;
             rb.linearVelocity = Vector3.zero;
         }
+
+        if (armJoint)
+            Destroy(armJoint);
+
+        upperBody.position = LoadVector("bodypos");
+        upperBody.eulerAngles = LoadVector("bodyrot");
+    }
+
+    private void OnApplicationQuit()
+    {
+        //Uncomment this and awake
+        Save();
+        PlayerPrefs.Save();
     }
 }

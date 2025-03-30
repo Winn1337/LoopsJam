@@ -15,7 +15,7 @@ public class Restarter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.R))
             Restart();
 
         timer += Time.unscaledDeltaTime;
@@ -28,10 +28,5 @@ public class Restarter : MonoBehaviour
     {
         PlayerPrefs.SetFloat("timer", timer);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.Save();
     }
 }
