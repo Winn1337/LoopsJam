@@ -1,6 +1,6 @@
 ## Todo (in order of severity)
-~~- Expand level~~
-~~- Add environment~~
+- ~~Expand level~~
+- ~~Add environment~~
 - Hand grip animation
 ~~- Start testing build right after this!~~
 - Voice acting, at least grunting maybe
