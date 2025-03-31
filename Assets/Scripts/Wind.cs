@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI.Table;
 using Random = UnityEngine.Random;
 
 public class Wind : MonoBehaviour

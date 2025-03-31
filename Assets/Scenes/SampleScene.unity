@@ -8245,14 +8245,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558206785}
-  - component: {fileID: 1558206786}
   m_Layer: 0
   m_Name: CameraSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1558206785
 Transform:
   m_ObjectHideFlags: 0
@@ -8268,23 +8267,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558206786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558206784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7614ff7c6ca0be4f994d6fa53e20c23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cams:
-  - {fileID: 330585545}
-  - {fileID: 2086005007}
-  toggle: 0
-  renderTexture: {fileID: 8400000, guid: 1988e7c6eb116344f8a352b4b3f07342, type: 2}
 --- !u!1001 &1571921611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8937,11 +8919,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a41d95454e36f4b8ce74c4c36c8893, type: 3}
---- !u!20 &2086005007 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 890968334903960354, guid: 6b1cf3569948e9b4baeaed398df4cddc, type: 3}
-  m_PrefabInstance: {fileID: 479065079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2111898822
 GameObject:
   m_ObjectHideFlags: 0
