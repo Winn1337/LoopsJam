@@ -29,4 +29,10 @@ public class Restarter : MonoBehaviour
         PlayerPrefs.SetFloat("timer", timer);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetFloat("timer", timer);
+        PlayerPrefs.Save();
+    }
 }
