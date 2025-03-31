@@ -2537,7 +2537,7 @@ MonoBehaviour:
   minStrength: 0
   maxStrength: 5
   strength: 0
-  audioVolume: 0.8
+  audioVolume: 0.5
 --- !u!82 &972406699
 AudioSource:
   m_ObjectHideFlags: 0
