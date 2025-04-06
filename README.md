@@ -11,6 +11,9 @@
   - Graphics options?
 - More audio feedback, when jumping and grabbing
 - Checkpoints
+- Water interaction
+  - Splash sound on impact
+  - Float in water? Or respawn automatically
 - Background music?
 - Voice acting, at least grunting maybe
 - Character unlocks
