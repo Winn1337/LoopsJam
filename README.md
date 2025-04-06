@@ -5,6 +5,9 @@
 - ~~Start testing build right after this!~~
 - Voice acting, at least grunting maybe
 - Background music?
+- Smoother hand animations
+- Checkpoints
+- Character unlocks
 - Settings with:
   - Volume slider
   - Ability to quit game
