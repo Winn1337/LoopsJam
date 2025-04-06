@@ -23,7 +23,7 @@ public class Wind : MonoBehaviour
 
     Rigidbody[] rbs;
     WindZone zone;
-    AudioSource audio;
+    new AudioSource audio;
 
     void Start()
     {
@@ -64,10 +64,6 @@ public class Wind : MonoBehaviour
 
         
         transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, 0);
-        //zone.transform.position = new Vector3(
-        //    mainCamera.transform.position.x - transform.forward.x * 10f,
-        //    mainCamera.transform.position.y - transform.forward.y * 6.5f,
-        //    0);
 
         foreach (var rb in rbs)
         {

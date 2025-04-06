@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        if (updateOffsetOnStart)
+        if (updateOffsetOnStart && toFollow)
             offset = transform.position - toFollow.position;
     }
     void Update()

@@ -3,15 +3,17 @@
 - ~~Add environment~~
 - ~~Hand grip animation~~
 - ~~Start testing build right after this!~~
-- Voice acting, at least grunting maybe
-- Background music?
 - Smoother hand animations
-- Checkpoints
-- Character unlocks
+- Implement an audio manager with audiosourcepool
 - Settings with:
-  - Volume slider
-  - Ability to quit game
+  - ~~Volume slider~~
+  - ~~Ability to quit game~~
   - Graphics options?
+- More audio feedback, when jumping and grabbing
+- Checkpoints
+- Background music?
+- Voice acting, at least grunting maybe
+- Character unlocks
 ## LoopsJam
 ### Theme
 Loop(s)

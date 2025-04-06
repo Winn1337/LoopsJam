@@ -7,6 +7,13 @@ public class CollisionSound : MonoBehaviour
 
     public AudioClip[] thuds;
 
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         float relvel = Mathf.Abs(Vector3.Dot(collision.relativeVelocity, collision.contacts[0].normal));
@@ -14,9 +21,15 @@ public class CollisionSound : MonoBehaviour
 
         if ((metalLayer & (1 << collision.gameObject.layer)) != 0)
         {
-            AudioSource.PlayClipAtPoint(metalClip, collision.contacts[0].point, volume);
+            audioSource.clip = metalClip;
+            audioSource.volume = volume;
+            audioSource.Play();
         }
-
-        AudioSource.PlayClipAtPoint(thuds[Random.Range(0, thuds.Length)], collision.contacts[0].point, volume * 1.5f);
+        else
+        {
+            audioSource.clip = thuds[Random.Range(0, thuds.Length)];
+            audioSource.volume = volume * 1.5f;
+            audioSource.Play();
+        }
     }
 }

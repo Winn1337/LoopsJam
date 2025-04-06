@@ -15,8 +15,8 @@ public class Restarter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-            Restart();
+        //if (Input.GetKeyDown(KeyCode.R))
+        //    Restart();
 
         timer += Time.unscaledDeltaTime;
 
