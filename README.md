@@ -3,7 +3,6 @@
 - ~~Add environment~~
 - ~~Hand grip animation~~
 - ~~Start testing build right after this!~~
-- Smoother hand animations
 - Implement an audio manager with audiosourcepool
 - Settings with:
   - ~~Volume slider~~
@@ -16,6 +15,7 @@
   - Float in water? Or respawn automatically
 - Background music?
 - Voice acting, at least grunting maybe
+- Smoother hand animations
 - Character unlocks
 ## LoopsJam
 ### Theme
