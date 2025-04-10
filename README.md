@@ -18,7 +18,7 @@
   - Splash sound on impact
   - Float in water? Or respawn automatically
 - Background music?
-- Voice acting, at least grunting maybe
+- Voice acting, ~~at least grunting maybe~~
 - Smoother hand animations
 - Character unlocks
 ## LoopsJam
