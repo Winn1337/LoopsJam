@@ -26,6 +26,10 @@ public class CollisionSound : MonoBehaviour
         else
             AudioManager.PlaySFX(thuds[Random.Range(0, thuds.Length)], collision.contacts[0].point, volume * 1.5f);
 
+        // Don't play hurt sound on arms
+        if (collision.contacts[0].thisCollider.transform != transform && collision.contacts[0].otherCollider.transform != transform)
+            return;
+
         if (collision.relativeVelocity.sqrMagnitude > painThreshold * painThreshold)
             AudioManager.PlayHurtSFX(hurt[Random.Range(0, hurt.Length)], transform.parent ? transform.parent.position : transform.position, 1);
     }
