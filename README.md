@@ -40,3 +40,4 @@ Weather or Environmental Effects that affect the game
 - https://freesound.org/people/jorickhoofd/sounds/160045/
 - https://freesound.org/people/RICHERlandTV/sounds/232358/
 - https://freesound.org/people/sleepCircle/sounds/22331/
+- https://opengameart.org/content/generic-hero-effort-noises
