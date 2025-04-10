@@ -20,16 +20,8 @@ public class CollisionSound : MonoBehaviour
         float volume = Mathf.InverseLerp(0, 8, relvel);
 
         if ((metalLayer & (1 << collision.gameObject.layer)) != 0)
-        {
-            audioSource.clip = metalClip;
-            audioSource.volume = volume;
-            audioSource.Play();
-        }
+            AudioManager.PlaySFX(metalClip, collision.contacts[0].point, volume);
         else
-        {
-            audioSource.clip = thuds[Random.Range(0, thuds.Length)];
-            audioSource.volume = volume * 1.5f;
-            audioSource.Play();
-        }
+            AudioManager.PlaySFX(thuds[Random.Range(0, thuds.Length)], collision.contacts[0].point, volume * 1.5f);
     }
 }
