@@ -3,13 +3,16 @@
 - ~~Add environment~~
 - ~~Hand grip animation~~
 - ~~Start testing build right after this!~~
-- Implement an audio manager with audiosourcepool
+- ~~Implement an audio manager with audiosourcepool~~
 - Settings with:
   - ~~Volume slider~~
   - ~~Ability to quit game~~
   - Graphics options?
 - More audio feedback, when jumping and grabbing
 - Checkpoints
+- Better level
+  - Town environment?
+  - Swing on lightposts, flagpoles, telephone wires (bouncy?)
 - Water interaction
   - Splash sound on impact
   - Float in water? Or respawn automatically
