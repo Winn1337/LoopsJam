@@ -8,7 +8,7 @@
   - ~~Volume slider~~
   - ~~Ability to quit game~~
   - Graphics options?
-- More audio feedback, when jumping and grabbing
+- More audio feedback, ~~when jumping~~ and grabbing
 - Prettier UI
 - Checkpoints
 - Better level
