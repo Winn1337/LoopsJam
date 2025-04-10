@@ -6,6 +6,8 @@ public class CollisionSound : MonoBehaviour
     public LayerMask metalLayer;
 
     public AudioClip[] thuds;
+    public AudioClip[] hurt;
+    public float painThreshold = 5f;
 
     AudioSource audioSource;
 
@@ -23,5 +25,8 @@ public class CollisionSound : MonoBehaviour
             AudioManager.PlaySFX(metalClip, collision.contacts[0].point, volume);
         else
             AudioManager.PlaySFX(thuds[Random.Range(0, thuds.Length)], collision.contacts[0].point, volume * 1.5f);
+
+        if (collision.relativeVelocity.sqrMagnitude > painThreshold * painThreshold)
+            AudioManager.PlayHurtSFX(hurt[Random.Range(0, hurt.Length)], transform.parent ? transform.parent.position : transform.position, 1);
     }
 }

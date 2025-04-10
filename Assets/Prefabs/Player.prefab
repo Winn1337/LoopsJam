@@ -589,6 +589,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1916f1ab92270c9499a9d5edb4e91b7e, type: 3}
   - {fileID: 8300000, guid: fa237435a6c0d864c979a3a2eb742e2a, type: 3}
   - {fileID: 8300000, guid: 0da37cddfe9f8fc46bda6b53ae37bc71, type: 3}
+  hurt:
+  - {fileID: 8300000, guid: 5c43350fec002c6468fd5f0e590e31b9, type: 3}
+  - {fileID: 8300000, guid: c6f4fe91812abf644aaab7bda46ec951, type: 3}
+  - {fileID: 8300000, guid: 31d773e5386c44f4ebae4a7293e94a68, type: 3}
+  - {fileID: 8300000, guid: 395d7e277305b9244b017dd3b233caf8, type: 3}
+  - {fileID: 8300000, guid: 533275c1a1211a84c977bd9e289ae7d7, type: 3}
+  - {fileID: 8300000, guid: b5a5ede00d4f8a74e80053a4f51eccf2, type: 3}
+  - {fileID: 8300000, guid: a464b23e684846f48a2059439ca9513b, type: 3}
+  painThreshold: 5
 --- !u!1 &5493545256449182823
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +914,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1916f1ab92270c9499a9d5edb4e91b7e, type: 3}
   - {fileID: 8300000, guid: fa237435a6c0d864c979a3a2eb742e2a, type: 3}
   - {fileID: 8300000, guid: 0da37cddfe9f8fc46bda6b53ae37bc71, type: 3}
+  hurt:
+  - {fileID: 8300000, guid: 5c43350fec002c6468fd5f0e590e31b9, type: 3}
+  - {fileID: 8300000, guid: c6f4fe91812abf644aaab7bda46ec951, type: 3}
+  - {fileID: 8300000, guid: 31d773e5386c44f4ebae4a7293e94a68, type: 3}
+  - {fileID: 8300000, guid: 395d7e277305b9244b017dd3b233caf8, type: 3}
+  - {fileID: 8300000, guid: 533275c1a1211a84c977bd9e289ae7d7, type: 3}
+  - {fileID: 8300000, guid: b5a5ede00d4f8a74e80053a4f51eccf2, type: 3}
+  - {fileID: 8300000, guid: a464b23e684846f48a2059439ca9513b, type: 3}
+  painThreshold: 5
 --- !u!1 &5779041626051412814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1044,12 @@ MonoBehaviour:
   hardHandRadius: 0.01
   armAnchor: {x: 0, y: 1.05, z: 0}
   armAxis: {x: 0, y: 0, z: 1}
+  jumpSounds:
+  - {fileID: 8300000, guid: 02ee6a6a32474d74898456c8d9f4dfc9, type: 3}
+  - {fileID: 8300000, guid: 8f1a856c81088b641bcdac73fc4c907a, type: 3}
+  - {fileID: 8300000, guid: d19102d4980a9fd4eb8bcbe0bb8c11fb, type: 3}
+  - {fileID: 8300000, guid: 858873b45ecca804fafd1cc6a6431b75, type: 3}
+  - {fileID: 8300000, guid: 184a08619ec90554aa145ffd427bfbf9, type: 3}
   handIndices:
   - {fileID: 6899106041311402672}
   - {fileID: 2122447119755731997}
@@ -1061,6 +1085,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1916f1ab92270c9499a9d5edb4e91b7e, type: 3}
   - {fileID: 8300000, guid: fa237435a6c0d864c979a3a2eb742e2a, type: 3}
   - {fileID: 8300000, guid: 0da37cddfe9f8fc46bda6b53ae37bc71, type: 3}
+  hurt:
+  - {fileID: 8300000, guid: 5c43350fec002c6468fd5f0e590e31b9, type: 3}
+  - {fileID: 8300000, guid: c6f4fe91812abf644aaab7bda46ec951, type: 3}
+  - {fileID: 8300000, guid: 31d773e5386c44f4ebae4a7293e94a68, type: 3}
+  - {fileID: 8300000, guid: 395d7e277305b9244b017dd3b233caf8, type: 3}
+  - {fileID: 8300000, guid: 533275c1a1211a84c977bd9e289ae7d7, type: 3}
+  - {fileID: 8300000, guid: b5a5ede00d4f8a74e80053a4f51eccf2, type: 3}
+  - {fileID: 8300000, guid: a464b23e684846f48a2059439ca9513b, type: 3}
+  painThreshold: 5
 --- !u!1 &7029131884715765212
 GameObject:
   m_ObjectHideFlags: 0

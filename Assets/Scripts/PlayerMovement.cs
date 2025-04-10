@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 armAnchor;
     public Vector3 armAxis;
 
+    public AudioClip[] jumpSounds;
+
     Transform lastBar;
 
     public Transform[] handIndices;
@@ -60,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && armJoint)
         {
+            AudioManager.PlaySFX(jumpSounds[Random.Range(0, jumpSounds.Length)], transform.position, 1);
             OpenHand();
             Destroy(armJoint);
         }
@@ -88,11 +91,6 @@ public class PlayerMovement : MonoBehaviour
 
                 lastBar = bars[0].transform;
                 CloseHand();
-            }
-            else
-            {
-                lastBar = null;
-                OpenHand();
             }
         }
         else

@@ -11,10 +11,12 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup sfxMixerGroup;
 
     ObjectPool<AudioSource> audioSourcePool;
+    AudioSource hurtAudioSource;
 
     void Awake()
     {
         audioSourcePool = new ObjectPool<AudioSource>(CreateAudioSource, OnGetAudioSource, OnReleaseAudioSource, OnDestroyAudioSource);
+        hurtAudioSource = CreateAudioSource();
         instance = this;
     }
 
@@ -57,6 +59,24 @@ public class AudioManager : MonoBehaviour
     public static void PlaySFX(AudioClip audioClip, Vector3 position, float volume)
     {
         instance.PlaySoundEffect(audioClip, position, volume);
+    }
+
+    void PlayHurtSoundEffect(AudioClip audioClip, Vector3 position, float volume)
+    {
+        //if (hurtAudioSource.isPlaying)
+        //    return;
+
+        hurtAudioSource.transform.position = position;
+        hurtAudioSource.clip = audioClip;
+        hurtAudioSource.volume = volume;
+        hurtAudioSource.spatialBlend = 1f;
+        hurtAudioSource.outputAudioMixerGroup = sfxMixerGroup;
+        hurtAudioSource.Play();
+    }
+
+    public static void PlayHurtSFX(AudioClip audioClip, Vector3 position, float volume)
+    {
+        instance.PlayHurtSoundEffect(audioClip, position, volume);
     }
 
     IEnumerator ReleaseAudioSource(AudioSource audioSource)
