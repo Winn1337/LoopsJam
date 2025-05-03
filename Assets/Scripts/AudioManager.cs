@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -6,17 +8,29 @@ using UnityEngine.Pool;
 
 public class AudioManager : MonoBehaviour
 {
+    [Serializable]
+    public struct AudioClips
+    {
+        public AudioClip enterUI;
+        public AudioClip exitUI;
+        public AudioClip clickUI;
+    }
+
     public static AudioManager instance;
 
     public AudioMixerGroup sfxMixerGroup;
 
     ObjectPool<AudioSource> audioSourcePool;
     AudioSource hurtAudioSource;
+    Camera mainCamera;
+
+    public AudioClips Clips;
 
     void Awake()
     {
         audioSourcePool = new ObjectPool<AudioSource>(CreateAudioSource, OnGetAudioSource, OnReleaseAudioSource, OnDestroyAudioSource);
         hurtAudioSource = CreateAudioSource();
+        mainCamera = Camera.main;
         instance = this;
     }
 
@@ -47,7 +61,7 @@ public class AudioManager : MonoBehaviour
     void PlaySoundEffect(AudioClip audioClip, Vector3 position, float volume)
     {
         AudioSource audioSource = audioSourcePool.Get();
-        audioSource.transform.position = position;
+        audioSource.transform.position = position == Vector3.zero ? mainCamera.transform.position : position;
         audioSource.clip = audioClip;
         audioSource.volume = volume;
         audioSource.spatialBlend = 1f;
@@ -58,6 +72,9 @@ public class AudioManager : MonoBehaviour
 
     public static void PlaySFX(AudioClip audioClip, Vector3 position, float volume)
     {
+        if (audioClip == null)
+            return;
+
         instance.PlaySoundEffect(audioClip, position, volume);
     }
 

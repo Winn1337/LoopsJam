@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public partial class PlayerPrefsUtil
+public class PlayerPrefsUtil
 {
     public static void SaveVector(string name, Vector3 vector)
     {
