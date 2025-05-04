@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8417638298858420420
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,8 +1040,8 @@ MonoBehaviour:
   barMask:
     serializedVersion: 2
     m_Bits: 8
-  easyHandRadius: 0.5
-  hardHandRadius: 0.01
+  easyHandRadius: 0.15
+  hardHandRadius: 0.15
   armAnchor: {x: 0, y: 1.05, z: 0}
   armAxis: {x: 0, y: 0, z: 1}
   jumpSounds:

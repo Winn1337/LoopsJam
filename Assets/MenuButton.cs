@@ -50,7 +50,7 @@ public class MenuButton : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(BounceScaleRoutine(selectedScale, 2f / duration));
         textMesh.color = selectedColor;
-        AudioManager.PlaySFX(AudioManager.instance.Clips.enterUI, Vector3.zero, 1f);
+        AudioManager.PlaySFX(AudioManager.instance.Clips.enterUI, Vector3.zero, 0.25f);
     }
 
     public void PointerExit()
