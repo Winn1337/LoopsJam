@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
         public AudioClip enterUI;
         public AudioClip exitUI;
         public AudioClip clickUI;
+        public AudioClip checkpoint;
     }
 
     public static AudioManager instance;

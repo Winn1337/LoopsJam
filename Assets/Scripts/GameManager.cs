@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.Audio;
 
 [Serializable]
@@ -110,12 +109,19 @@ public class GameManager : MonoBehaviour
         audioMixer.SetFloat("musicVol", Mathf.Lerp(-80, 20, audioCurve.Evaluate(value)));
     }
 
+    public void GetSave(out Vector3 pos, out Vector3 rot)
+    {
+        if (PlayerPrefsUtil.LoadVector("bodypos", out pos) && PlayerPrefsUtil.LoadVector("bodyrot", out rot))
+            return;
+
+        pos = transform.position;
+        rot = transform.eulerAngles;
+    }
+
     public void Load()
     {
-        if (PlayerPrefsUtil.LoadVector("bodypos", out Vector3 pos) && PlayerPrefsUtil.LoadVector("bodyrot", out Vector3 rot))
-            SpawnPlayer(pos, Quaternion.Euler(rot));
-        else
-            SpawnPlayer(transform.position, transform.rotation);
+        GetSave(out Vector3 pos, out Vector3 rot);
+        SpawnPlayer(pos, Quaternion.Euler(rot));
     }
 
     public void Save()
@@ -123,8 +129,13 @@ public class GameManager : MonoBehaviour
         if (!player)
             return;
 
-        PlayerPrefsUtil.SaveVector("bodypos", player.transform.position);
-        PlayerPrefsUtil.SaveVector("bodyrot", player.transform.eulerAngles);
+        Save(player.transform.position, player.transform.eulerAngles);
+    }
+
+    public void Save(Vector3 pos, Vector3 rot)
+    {
+        PlayerPrefsUtil.SaveVector("bodypos", pos);
+        PlayerPrefsUtil.SaveVector("bodyrot", rot);
     }
 
     public void Clear()

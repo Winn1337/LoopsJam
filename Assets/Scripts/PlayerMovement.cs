@@ -91,6 +91,9 @@ public class PlayerMovement : MonoBehaviour
 
                 lastBar = bars[0].transform;
                 CloseHand();
+
+                if (lastBar.TryGetComponent(out Checkpoint cp))
+                    cp.Save();
             }
         }
         else
