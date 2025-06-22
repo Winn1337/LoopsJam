@@ -9,8 +9,8 @@
   - ~~Ability to quit game~~
   - Graphics options?
 - More audio feedback, ~~when jumping~~ and grabbing
-- Prettier UI
-- Checkpoints
+~~- Prettier UI~~
+~~- Checkpoints~~
 - Better level
   - Town environment?
   - Swing on lightposts, flagpoles, telephone wires (bouncy?)
